@@ -4,6 +4,10 @@ import settings
 
 app = Flask(__name__)
 
+@app.route("/")
+def root():
+    return {"message": "API is running"}
+
 @app.route("/hello")
 def hello():
     return {"message": "Hello from Python API!"}
