@@ -1,0 +1,41 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  python-api:
+    build: ./pythonapi
+    container_name: python-api
+    restart: unless-stopped
+    environment:
+      DB_HOST: mysql-db
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: mydb
+    depends_on:
+      - mysql-db
+    ports:
+      - "5000:5000"
+
+  react-app:
+    build: ./reactapp
+    container_name: react-app
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - python-api
+
+volumes:
+  mysql-data:
+
