@@ -51,6 +51,10 @@ Open your browser:
 
 ## Environment Variables
 
-  Python API
+1. Python API
 
-  <img width="365" height="136" alt="Image" src="https://github.com/user-attachments/assets/9e4d54c2-ac89-4b61-9eec-8bbe3906a206" />
+   <img width="365" height="136" alt="Image" src="https://github.com/user-attachments/assets/9e4d54c2-ac89-4b61-9eec-8bbe3906a206" />
+
+2. SQL (docker-compose.yml)
+
+   <img width="364" height="148" alt="Image" src="https://github.com/user-attachments/assets/5a9198a5-c327-471a-943f-d76bf32cb112" />
